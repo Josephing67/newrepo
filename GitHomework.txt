@@ -1,0 +1,224 @@
+Joseph@HP500 MINGW64 ~
+$  cd Desktop
+Joseph@HP500 MINGW64 ~/Desktop
+$ mkdir myproject
+Joseph@HP500 MINGW64 ~/Desktop
+$ cd myproject
+Joseph@HP500 MINGW64 ~/Desktop/myproject
+$ ls
+Joseph@HP500 MINGW64 ~/Desktop/myproject
+$ git init
+Initialized empty Git repository in C:/Users/Joseph/Desktop/myproject/.git/
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ touch newfile.txt
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ ls
+newfile.txt
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git status
+On branch master
+No commits yet
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+nothing added to commit but untracked files present (use "git add" to track)
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git add newfile.txt
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git status
+On branch master
+No commits yet
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   newfile.txt
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git commit -m "This Is My First Commit!"
+[master (root-commit) a13dda4] This Is My First Commit!
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newfile.txt
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git checkout -b my-new-branch
+Switched to a new branch 'my-new-branch'
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git branch
+  master
+* my-new-branch
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git checkout master
+Switched to branch 'master'
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git remote add origin https://github.com/Josephing67/newrepo.git
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 243 bytes | 243.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Josephing67/newrepo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ ls
+newfile.txt
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git branch
+* master
+  my-new-branch
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git push origin my-new-branch
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'my-new-branch' on GitHub by visiting:
+remote:      https://github.com/Josephing67/newrepo/pull/new/my-new-branch
+remote:
+To https://github.com/Josephing67/newrepo.git
+ * [new branch]      my-new-branch -> my-new-branch
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ ^C
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git checkout my-new-branch
+Switched to branch 'my-new-branch'
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git status
+On branch my-new-branch
+nothing to commit, working tree clean
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git commit -m "This Is My 2nd Commit 1st on new branch!"
+On branch my-new-branch
+nothing to commit, working tree clean
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ touch newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ ls
+newfile.txt  newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git rm newtextnewtext
+fatal: pathspec 'newtextnewtext' did not match any files
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git rm newtextnewtext.txt
+fatal: pathspec 'newtextnewtext.txt' did not match any files
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git rm  newtextnewtext
+fatal: pathspec 'newtextnewtext' did not match any files
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git status
+On branch my-new-branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newtextnewtext
+nothing added to commit but untracked files present (use "git add" to track)
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git add newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git status
+On branch my-new-branch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git rm newtextnewtext
+error: the following file has changes staged in the index:
+    newtextnewtext
+(use --cached to keep the file, or -f to force removal)
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git commit -m " Will rm newtextnewtext"
+[my-new-branch 6d2a28c]  Will rm newtextnewtext
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git push my-new-branch
+fatal: 'my-new-branch' does not appear to be a git repository
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git push origin my-new-branch
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 272 bytes | 272.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Josephing67/newrepo.git
+   a13dda4..6d2a28c  my-new-branch -> my-new-branch
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git rm newtextnewtext
+rm 'newtextnewtext'
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git push origin my-new-branch
+Everything up-to-date
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git push origin master
+To https://github.com/Josephing67/newrepo.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Josephing67/newrepo.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Joseph@HP500 MINGW64 ~/Desktop/myproject (my-new-branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git pull https://github.com/Josephing67/newrepo.git
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 634 bytes | 90.00 KiB/s, done.
+From https://github.com/Josephing67/newrepo
+ * branch            HEAD       -> FETCH_HEAD
+Updating a13dda4..b4bb289
+Fast-forward
+ newtextnewtext | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ ls
+newfile.txt  newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git rm newtextnewtext
+rm 'newtextnewtext'
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ ls
+newfile.txt
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git commit -m Deleted newtextnewtext
+[master 20e9a2e] Deleted
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 newtextnewtext
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 250 bytes | 250.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Josephing67/newrepo.git
+   b4bb289..20e9a2e  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Joseph@HP500 MINGW64 ~/Desktop/myproject (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+nothing to commit, working tree clean 
